@@ -96,6 +96,7 @@
 
 -(void) draw
 {
+    // need to add the methods in the implementation file
     [SGGraphics fill:c ellipseOnScreenX:x y:y width:w height:h];
     [leftEye drawAtX: x andY:y];
     [rightEye drawAtX: x andY: y];
