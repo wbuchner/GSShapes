@@ -195,9 +195,38 @@ return [ranRect autorelease];
     x = value;
 }
 
-@synthesize y;
+@synthesize y = y;
 @synthesize rad = r;
 @synthesize CircleColor = c;
+
+// this class method creates a circle inside the Class structure and allows you to create one in any
+// implementation file by calling the method name. It is public.
++(GSCircle *) randomCircle
+{
+    GSCircle *result = [[GSCircle alloc] initCircle:[SGGraphics rgbaFloatColorRed:[SGUtils rnd] 
+                                                                        green:[SGUtils rnd] 
+                                                                         blue:[SGUtils rnd]
+                                                                        alpha:[SGUtils rndUpto:100]] 
+                                            atX:[SGUtils rnd] * [SGGraphics screenWidth] 
+                                           andY:[SGUtils rnd] * [SGGraphics screenHeight] 
+                                     withRadius:[SGUtils rndUpto:80]];
+    return result;
+}
+
+
+
+-(id) initCircle:(color)CircleColor atX:(float)xStart andY:(float)yStart withRadius:(int)rad;
+{
+    self = [super init];
+    if (self != nil)
+    {
+        [self setX: xStart]; 
+        self.y = yStart;
+        self.rad = rad;
+        self.CircleColor = CircleColor;
+   }
+    return self;
+}
 
 -(void)draw
 {

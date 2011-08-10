@@ -77,6 +77,7 @@
 		94FA07C91325CFA20066F30C /* Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 94FA07931325CFA20066F30C /* Utils.c */; };
 		B023586F13EE679E005F7D9B /* Face.m in Sources */ = {isa = PBXBuildFile; fileRef = B023586E13EE679E005F7D9B /* Face.m */; };
 		B0BA538913DE53BF00582BCF /* Shapes.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BA538813DE53BF00582BCF /* Shapes.m */; };
+		B0C4F1F613F21D250042AC92 /* Snowman.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C4F1F513F21D250042AC92 /* Snowman.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -220,6 +221,8 @@
 		B023586E13EE679E005F7D9B /* Face.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Face.m; path = ../Face.m; sourceTree = "<group>"; };
 		B0BA538713DE53BF00582BCF /* Shapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shapes.h; path = ../Shapes.h; sourceTree = "<group>"; };
 		B0BA538813DE53BF00582BCF /* Shapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Shapes.m; path = ../Shapes.m; sourceTree = "<group>"; };
+		B0C4F1F413F21D250042AC92 /* Snowman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Snowman.h; path = ../Snowman.h; sourceTree = "<group>"; };
+		B0C4F1F513F21D250042AC92 /* Snowman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Snowman.m; path = ../Snowman.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +248,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B0C4F1F413F21D250042AC92 /* Snowman.h */,
+				B0C4F1F513F21D250042AC92 /* Snowman.m */,
 				B0BA538713DE53BF00582BCF /* Shapes.h */,
 				B0BA538813DE53BF00582BCF /* Shapes.m */,
 				B023586D13EE679E005F7D9B /* Face.h */,
@@ -532,6 +537,7 @@
 				94FA07C91325CFA20066F30C /* Utils.c in Sources */,
 				B0BA538913DE53BF00582BCF /* Shapes.m in Sources */,
 				B023586F13EE679E005F7D9B /* Face.m in Sources */,
+				B0C4F1F613F21D250042AC92 /* Snowman.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

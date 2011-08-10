@@ -101,6 +101,10 @@
 @property (assign) int rad;
 @property (assign) color CircleColor;
 
++(GSCircle *) randomCircle;
+
+-(id) initCircle:(color)CircleColor atX:(float)x andY:(float)y withRadius:(int)rad;
+
 -(void)draw;
 
 @end

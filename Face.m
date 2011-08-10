@@ -56,7 +56,7 @@
         rx = 2 * startW / 3 - eyeW / 2;
         eyeY = startH / 3;
         
-        NSLog(@"eyeW %d startW %d lx %f rx %f eyeY %f startH %d ",eyeW, startW, lx, rx, eyeY, startH);
+       
         
         leftEye = [[GSEllipse alloc] initEllipse:ColorWhite 
                                              atX:lx 

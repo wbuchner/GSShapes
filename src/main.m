@@ -4,6 +4,7 @@
 
 #import "shapes.h"
 #import "Face.h"
+#import "Snowman.h"
 
 int main(int argc, const char* argv[])
 {
@@ -18,12 +19,14 @@ int main(int argc, const char* argv[])
     [SGGraphics clearScreen:ColorWhite];
     
     
-    GSRectangle *r = [[GSRectangle randomRectangle] retain]; 
+//    GSRectangle *r = [[GSRectangle randomRectangle] retain]; 
+//    
+//    GSEllipse *e = [[GSEllipse randomEllipse] retain];
+//    
+//    GSLine *l = [[GSLine randomLine] retain];
     
-    GSEllipse *e = [[GSEllipse randomEllipse] retain];
-    
-    GSLine *l = [[GSLine randomLine] retain];
-    
+    Snowman *s = [[Snowman randomSnowman] retain]; 
+
     
     while (![SGInput windowCloseRequested])
     {
@@ -37,14 +40,9 @@ int main(int argc, const char* argv[])
         if (rnd > 0.63f) // 50% of the time
         {
 
-            GSCircle *sm = [[GSCircle alloc] init];
-            [sm setX:300.0f];
-            [sm setY:300.0f];
-            sm.rad = 100;
-            sm.CircleColor = ColorRed;
+            Snowman *s = [Snowman randomSnowman];
+            [s  draw];
             
-            
-            [sm draw];
 //            GSRectangle *r = [GSRectangle randomRectangle];
 //            [r draw];
             
@@ -64,9 +62,12 @@ int main(int argc, const char* argv[])
         
         [SGGraphics refreshScreen];
     }
-    [r release];
-    [e release];
-    [l release];
+
+//    [r release];
+//    [e release];
+//    [l release];
+      [s release];
+  
     
     [SGAudio closeAudio];
     [SGResources releaseAllResources];
