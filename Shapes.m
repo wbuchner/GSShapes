@@ -45,11 +45,7 @@
                                                          andY:[SGUtils rnd] * [SGGraphics screenHeight] 
                                                     withWidth:[SGUtils rndUpto:200] 
                                                     andHeight:[SGUtils rndUpto:200]];    
-    
-    
 return [ranRect autorelease];                   
-                                               
-
 }
 
 
@@ -61,8 +57,6 @@ return [ranRect autorelease];
 -(void) setX:(float)value{
     x = value;
 }
-
-
 
 -(id) initRectangle:(color) startColor 
                 atX:(float) startX 
@@ -81,6 +75,11 @@ return [ranRect autorelease];
 -(void) draw
 {
     [SGGraphics fill:c rectangleX:x y:y width:w height:h];
+}
+
+-(void) drawAtX:(float)xOffset andY:(float)yOffset
+{
+    [SGGraphics fill:c rectangleX:xOffset+x y:yOffset+y width:w height:h];
 }
 
 @end
@@ -110,11 +109,11 @@ return [ranRect autorelease];
 }
 
 
--(id) initEllipse:(color) startColor 
-              atX:(float) startX 
-             andY:(float) startY 
-        withWidth:(int)startW 
-        andHeight:(int)startH
+-(id) initEllipse:(color)   startColor 
+              atX:(float)   startX 
+             andY:(float)   startY 
+        withWidth:(int)     startW 
+        andHeight:(int)     startH
 {
     self = [super initShape:startColor
                         atX:startX 
@@ -128,9 +127,9 @@ return [ranRect autorelease];
 {
     [SGGraphics fill:c ellipseOnScreenX:x y:y width:w height:h];
 }
--(void) drawAtX:(float)xOffset andY:(float):yOffset
+-(void) drawAtX:(float)xOffset andY:(float)yOffset
 {
-    [SGGraphics fill:c ellipseOnScreenX:x y:y width:w height:h];
+    [SGGraphics fill:c ellipseOnScreenX:xOffset + x y:yOffset + y width:w height:h];
 }
 @end
 
@@ -180,6 +179,29 @@ return [ranRect autorelease];
 
 -(void) draw{
     [SGGraphics draw:[SGGraphics randomColor] lineX1:xPosStart y1:yPosStart x2:xPosEnd y2:yPosEnd];
+}
+
+@end
+
+
+@implementation GSCircle
+
+-(float) x
+{
+    return x;
+}
+-(void) setX:(float)value
+{
+    x = value;
+}
+
+@synthesize y;
+@synthesize rad = r;
+@synthesize CircleColor = c;
+
+-(void)draw
+{
+    [SGGraphics fill:c circleOnScreenX:x y:y radius:r];
 }
 
 @end

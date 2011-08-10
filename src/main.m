@@ -4,6 +4,7 @@
 
 #import "shapes.h"
 #import "Face.h"
+
 int main(int argc, const char* argv[])
 {
     [SGResources setAppPath:[NSString stringWithCString:argv[0] encoding:NSASCIIStringEncoding]];
@@ -31,25 +32,34 @@ int main(int argc, const char* argv[])
         
         float rnd = [SGUtils rnd];
         //Draw game...
-        [SGText drawFramerateAtX:0 y:0];
+        //[SGText drawFramerateAtX:0 y:0];
         
         if (rnd > 0.63f) // 50% of the time
         {
-            GSRectangle *r = [GSRectangle randomRectangle];
-            [r draw];
+
+            GSCircle *sm = [[GSCircle alloc] init];
+            [sm setX:300.0f];
+            [sm setY:300.0f];
+            sm.rad = 100;
+            sm.CircleColor = ColorRed;
+            
+            
+            [sm draw];
+//            GSRectangle *r = [GSRectangle randomRectangle];
+//            [r draw];
             
         }else if (rnd < 0.33f)
         {
-            GSEllipse *e = [GSEllipse randomEllipse];
-            [e draw];
+//            GSEllipse *e = [GSEllipse randomEllipse];
+//            [e draw];
             
         }else
         {
-            GSLine *l = [GSLine randomLine];
-            [l draw];
+//            GSLine *l = [GSLine randomLine];
+//            [l draw];
            
-            GSFace *f = [GSFace randomFace];
-            [f draw];
+//            GSFace *f = [GSFace randomFace];
+//            [f draw];
         }
         
         [SGGraphics refreshScreen];

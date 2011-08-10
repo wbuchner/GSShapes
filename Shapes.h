@@ -43,7 +43,7 @@
 -(id) initRectangle:(color) shape_color atX:(float) x andY:(float) y withWidth:(int)w andHeight:(int)h;
 
 -(void) draw;
- 
+-(void) drawAtX:(float)xOffset andY:(float)yOffset; 
 
 @end
 
@@ -61,7 +61,7 @@
 -(id) initEllipse:(color) shape_color atX:(float) x andY:(float) y withWidth:(int)w andHeight:(int)h;
 
 -(void) draw;
--(void) drawAtX:(float)xOffset andY:(float):yOffset;
+-(void) drawAtX:(float)xOffset andY:(float)yOffset;
 
 @end
 
@@ -86,3 +86,25 @@
 -(void) draw;
 
 @end
+
+
+@interface GSCircle : NSObject{
+    float   x, y;
+    int     r;
+    color   c;
+}   
+
+-(float) x;
+-(void) setX:(float)value;
+
+@property (assign) float y;
+@property (assign) int rad;
+@property (assign) color CircleColor;
+
+-(void)draw;
+
+@end
+
+
+
+
