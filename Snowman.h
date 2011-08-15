@@ -10,8 +10,9 @@
 #import "Shapes.h"
 
 @interface Snowman : GSCircle{
-    GSCircle *body, *head, *button, *leftEye, *rightEye;; 
+    GSCircle *body, *head, *button1,*button2, *button3, *leftEye, *rightEye;; 
     GSRectangle *mouth;
+    GSLine *armLeft, *armRight;
 }
 
 +(Snowman *) randomSnowman;

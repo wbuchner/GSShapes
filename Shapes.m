@@ -137,7 +137,7 @@ return [ranRect autorelease];
 
 +(GSLine *) randomLine
 {
-    GSLine *ranLine = [[GSLine alloc] initLine:[SGGraphics randomColor] 
+    GSLine *ranLine = [[GSLine alloc] initLine:ColorBlack //[SGGraphics randomColor] 
                                      xPosStart:[SGUtils rnd] * [SGGraphics screenWidth] 
                                      yPosStart:[SGUtils rnd] * [SGGraphics screenHeight] 
                                        xPosEnd:[SGUtils rnd] * [SGGraphics screenWidth] 

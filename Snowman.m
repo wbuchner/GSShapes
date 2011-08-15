@@ -61,7 +61,7 @@
         
         head = [[GSCircle alloc] initCircle:c atX:headX andY:headY withRadius:headRadius];
          
-         NSLog(@"headRadius %d headX %f headY %f  ",headRadius, headX, headY);
+//         NSLog(@"headRadius %d headX %f headY %f  ",headRadius, headX, headY);
         
         // Snowmans Eyes
         int eyeRadius;
@@ -74,11 +74,44 @@
         
         
         leftEye = [[GSCircle alloc] initCircle:ColorBlack atX:leftEyeX andY:EyeY withRadius:eyeRadius];
-        
-        
-        
-        
         rightEye = [[GSCircle alloc] initCircle:ColorBlack atX:rightEyeX andY:EyeY withRadius:eyeRadius];
+        
+        
+        // Snowman buttons
+        float button1X, button1Y;
+        
+        button1X = headX;
+        button1Y = headY + (eyeRadius * 11);
+
+        
+        button1 = [[GSCircle alloc] initCircle:ColorBlack 
+                                           atX:button1X 
+                                          andY:button1Y 
+                                    withRadius:eyeRadius / 1.5];
+        button2 = [[GSCircle alloc] initCircle:ColorBlack 
+                                           atX:button1X 
+                                          andY:button1Y +(eyeRadius*5) 
+                                    withRadius:eyeRadius / 1.5];
+        button3 = [[GSCircle alloc] initCircle:ColorBlack 
+                                           atX:button1X 
+                                          andY:button1Y +(eyeRadius*10) 
+                                    withRadius:eyeRadius / 1.5];
+      
+        
+        // Snowman arm left
+       
+        float armStartX, armStartY, armEndX, armEndY;
+        
+        armStartX = button1X;
+        armStartY = button1Y;
+        armEndX = button1X - 5;
+        armEndY = button1Y - 5;
+        
+        armLeft = [[GSLine alloc] initLine:ColorBlack 
+                                 xPosStart:armStartX - (headRadius+ (headRadius /1.5))
+                                 yPosStart:armStartY 
+                                   xPosEnd:leftEyeX - (headRadius * 3)
+                                   yPosEnd:EyeY  - (headRadius * .45)];
     }
     return self;
 
@@ -89,12 +122,18 @@
     [head draw];
     [leftEye draw];
     [rightEye draw];
+    [button1 draw];
+    [button2 draw];
+    [button3 draw];
+    [armLeft draw];
 }
 
 -(void) dealloc
 {
     [Snowman release];
     [head release];
+    [leftEye release];
+    [rightEye release];
     [super dealloc];
 }
 @end
